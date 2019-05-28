@@ -1,6 +1,7 @@
 from app import db
 from datetime import datetime
 
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
@@ -12,7 +13,7 @@ class User(db.Model):
         return "<User {}>".format(self.username)
 
 
-class Posts(db.Model):
+class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(256))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.now)
@@ -20,4 +21,3 @@ class Posts(db.Model):
 
     def __repr__(self):
         return "<Post {}>".format(self.body)
-
