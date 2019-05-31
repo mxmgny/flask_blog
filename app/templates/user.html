@@ -8,11 +8,6 @@
     </table>
     <hr>
     {% for post in posts %}
-    <table class="table-borderless table-hover">
-        <tr>
-            <td><img src="{{ post.author.avatar(36) }}" ></td>
-            <td>{{ post.author.username }} says: <br>{{ post.body }}</br></td>
-        </tr>
-    </table>
+        {% include '_post.html' %}
     {% endfor %}
 {% endblock %}
