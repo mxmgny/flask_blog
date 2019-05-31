@@ -1,6 +1,7 @@
-<table class="table-borderless table-hover">
-        <tr>
-            <td><img src="{{ post.author.avatar(36) }}" ></td>
-            <td>{{ post.author.username }} says: <br>{{ post.body }}</br></td>
-        </tr>
-    </table>
+<div class="media" style=" padding:5px">
+  <img src="{{ post.author.avatar(64) }}" class="mr-3" >
+  <div class="media-body">
+    <h5 class="mt-0">{{ post.author.username }} says:</h5>
+    {{ post.body }}
+  </div>
+</div>
