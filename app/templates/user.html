@@ -12,7 +12,15 @@
           {% if user.last_seen %} <p class="card-text">
             <small class="text-muted">Last seen on : {{ user.last_seen }}
             </small></p>{% endif %}
+          <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
+          <hr>
+          {% if user==current_user%}
           <a href="{{ url_for('edit_profile') }}" class="btn btn-primary">Edit profile</a>
+          {% elif not current_user.is_following(user) %}
+          <a href="{{url_for('follow', username=user.username)}}" class="btn btn-primary">Follow</a>
+          {% else %}
+          <a href="{{ url_for('unfollow', username=user.username) }}" class="btn btn-primary">Unfollow</a>
+          {% endif %}
       </div>
     </div>
   </div>
