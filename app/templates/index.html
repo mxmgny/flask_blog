@@ -1,9 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Hi, {{ current_user.username }}</h1>
-<ul>
+
+<form action="" method="POST" style="margin:30px">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+        <label for="post">{{ form.post.label }}</label>
+        <p>{{ form.post(cols=32, rows=4, class_='form-corntrol') }}</p>
+        {% for error in form.post.errors %}
+        <span style="color:red;">[{{ error }}]</span>
+        {% endfor %}
+    </div>
+    <p> {{ form.submit(class_='btn btn-primary') }} </p>
+</form>
+
+<div class="container" style="margin-left:30px;">
     {% for post in posts %}
-    <li>{{ post.author.username }}: "{{ post.body }}"</li>
+        {% include '_post.html' %}
     {% endfor %}
-</ul>
+</div>
 {% endblock %}
