@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Hi, {{ current_user.username }}</h1>
-
+{% if form %}
 <form action="" method="POST" style="margin:30px">
     {{ form.hidden_tag() }}
 
@@ -14,7 +14,7 @@
     </div>
     <p> {{ form.submit(class_='btn btn-primary') }} </p>
 </form>
-
+{% endif %}
 <div class="container" style="margin-left:30px;">
     {% for post in posts %}
         {% include '_post.html' %}
