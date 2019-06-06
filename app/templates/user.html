@@ -14,19 +14,19 @@
           {% if user.last_seen %}
           <p class="card-text">
             <small class="text-muted">
-                Last seen on : {{ moment(user.last_seen).format('LLL') }}
+                {{ _('Last seen on') }} : {{ moment(user.last_seen).format('LLL') }}
             </small>
           </p>
           {% endif %}
 
-          <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
+          <p>{{ user.followers.count() }} {{ _('followers') }}, {{ user.followed.count() }} {{ _('following') }}.</p>
           <hr>
           {% if user==current_user%}
-          <a href="{{ url_for('edit_profile') }}" class="btn btn-primary">Edit profile</a>
+          <a href="{{ url_for('edit_profile') }}" class="btn btn-primary">{{ _('Edit profile') }}</a>
           {% elif not current_user.is_following(user) %}
-          <a href="{{url_for('follow', username=user.username)}}" class="btn btn-primary">Follow</a>
+          <a href="{{url_for('follow', username=user.username)}}" class="btn btn-primary">{{ _('Follow') }}</a>
           {% else %}
-          <a href="{{ url_for('unfollow', username=user.username) }}" class="btn btn-primary">Unfollow</a>
+          <a href="{{ url_for('unfollow', username=user.username) }}" class="btn btn-primary">{{ _('Unfollow') }}</a>
           {% endif %}
       </div>
     </div>
@@ -43,14 +43,14 @@
       {% if not prev_url and not next_url %}
       {% else %}
       {% if prev_url %}
-    <li class="page-item"><a class="page-link" href="{{ prev_url }} ">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="{{ prev_url }} ">{{ _('Previous') }}</a></li>
       {% else %}
-      <li class="page-item disabled"><a class="page-link" href="{{ prev_url }} ">Previous</a></li>
+      <li class="page-item disabled"><a class="page-link" href="{{ prev_url }} ">{{ _('Previous') }}</a></li>
         {% endif %}
       {% if next_url %}
-    <li class="page-item"><a class="page-link" href="{{ next_url }}">Next</a></li>
+    <li class="page-item"><a class="page-link" href="{{ next_url }}">{{ _('Next') }}</a></li>
       {% else %}
-      <li class="page-item disabled"><a class="page-link " href="{{ next_url }} ">Next</a></li>
+      <li class="page-item disabled"><a class="page-link " href="{{ next_url }} ">{{ _('Next') }}</a></li>
     {% endif %}
       {% endif %}
   </ul>
