@@ -8,10 +8,17 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{ user.username }}</h5>
+
           {% if user.about_me %} <p class="card-text">{{ user.about_me }}</p> {% endif %}
-          {% if user.last_seen %} <p class="card-text">
-            <small class="text-muted">Last seen on : {{ user.last_seen }}
-            </small></p>{% endif %}
+
+          {% if user.last_seen %}
+          <p class="card-text">
+            <small class="text-muted">
+                Last seen on : {{ moment(user.last_seen).format('LLL') }}
+            </small>
+          </p>
+          {% endif %}
+
           <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
           <hr>
           {% if user==current_user%}

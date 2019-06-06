@@ -3,7 +3,7 @@
     <img src="{{ post.author.avatar(32) }}" class="mr-3" >
     </a>
   <div class="media-body">
-    <h5 class="mt-0">{{ post.author.username }} says:</h5>
+    <h5 class="mt-0">{{ post.author.username }} said {{ moment(post.timestamp).fromNow() }} :</h5>
     {{ post.body }}
   </div>
 </div>
