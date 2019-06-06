@@ -41,7 +41,7 @@ msgstr "Повторите пароль"
 
 #: app/forms.py:18 app/templates/register.html:3
 msgid "Register"
-msgstr "Зарегистрируйтесб"
+msgstr "Зарегистрируйтесь"
 
 #: app/forms.py:33
 msgid "About me"
