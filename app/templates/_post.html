@@ -12,5 +12,9 @@
             username=user_link, when=moment(post.timestamp).fromNow()) }}
       </h5>
     {{ post.body }}
+      {% if post.language and post.language != g.locale %}
+      <br><br>
+      <a href="#">{{ _('Translate') }}</a>
+      {% endif %}
   </div>
 </div>

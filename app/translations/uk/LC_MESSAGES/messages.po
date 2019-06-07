@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-06-06 18:23+0300\n"
+"POT-Creation-Date: 2019-06-06 19:10+0300\n"
 "PO-Revision-Date: 2019-06-06 17:46+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -43,12 +43,24 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
+#: app/forms.py:23
+msgid "This name is already in use"
+msgstr ""
+
+#: app/forms.py:28
+msgid "This email is already in use"
+msgstr ""
+
 #: app/forms.py:33
 msgid "About me"
 msgstr ""
 
 #: app/forms.py:34 app/forms.py:49
 msgid "Submit"
+msgstr ""
+
+#: app/forms.py:44
+msgid "Please use a different username."
 msgstr ""
 
 #: app/forms.py:47
@@ -67,43 +79,51 @@ msgstr ""
 msgid "Request Password reset"
 msgstr ""
 
-#: app/routes.py:21
+#: app/routes.py:22
 msgid "Your post is not live!"
 msgstr ""
 
-#: app/routes.py:77
+#: app/routes.py:52
+msgid "Invalid username or password"
+msgstr ""
+
+#: app/routes.py:78
 msgid "Congratulations, you are now registered person!"
 msgstr ""
 
-#: app/routes.py:102
+#: app/routes.py:103
 msgid "Your changes have been saved"
 msgstr ""
 
-#: app/routes.py:122
+#: app/routes.py:124
 msgid "User %{username} not found"
 msgstr ""
 
-#: app/routes.py:125
+#: app/routes.py:127
 msgid "You cannot follow yourself!"
 msgstr ""
 
-#: app/routes.py:138
+#: app/routes.py:131
+msgid "You are now following %{username}!"
+msgstr ""
+
+#: app/routes.py:140
 msgid "User %{username} is not found:c "
 msgstr ""
 
-#: app/routes.py:141
+#: app/routes.py:143
 msgid "You cannot unfollow yourself!"
 msgstr ""
 
-#: app/routes.py:145
+#: app/routes.py:147
 msgid "You stop following %{username}."
 msgstr ""
 
-#: app/routes.py:157
+#: app/routes.py:159
 msgid "Check your email for the instructions to reset your password"
 msgstr ""
 
-#: app/routes.py:172
+#: app/routes.py:174
 msgid "Your password has been changed"
 msgstr ""
 
@@ -113,6 +133,11 @@ msgstr ""
 
 #: app/templates/404.html:7
 msgid "Back"
+msgstr ""
+
+#: app/templates/_post.html:11
+#, python-format
+msgid "%(username)s said %(when)s"
 msgstr ""
 
 #: app/templates/base.html:16
@@ -156,6 +181,26 @@ msgstr ""
 #: app/templates/index.html:33 app/templates/index.html:35
 #: app/templates/user.html:51 app/templates/user.html:53
 msgid "Next"
+msgstr ""
+
+#: app/templates/login.html:3
+msgid "Sign In"
+msgstr ""
+
+#: app/templates/login.html:24
+msgid " Doesn't have account yet?"
+msgstr ""
+
+#: app/templates/login.html:24
+msgid "Click to register!"
+msgstr ""
+
+#: app/templates/login.html:25
+msgid "Forgot your Password?"
+msgstr ""
+
+#: app/templates/login.html:26
+msgid "Click to reset it "
 msgstr ""
 
 #: app/templates/user.html:17

@@ -20,12 +20,12 @@ class RegistrationForm(FlaskForm):
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
-            raise ValidationError('This name is already in use')
+            raise ValidationError(_l('This name is already in use'))
 
     def validate_email(self, email):
         email = User.query.filter_by(email=email.data).first()
         if email is not None:
-            raise ValidationError('This email is already in use')
+            raise ValidationError(_l('This email is already in use'))
 
 
 class EditProfileForm(FlaskForm):
@@ -41,7 +41,7 @@ class EditProfileForm(FlaskForm):
         if username.data != self.original_username:
             user = User.query.filter_by(username=self.username.data).first()
             if user is not None:
-                raise ValidationError('Please use a different username.')
+                raise ValidationError(_l('Please use a different username.'))
 
 class PostForm(FlaskForm):
     post = TextAreaField(_l('Say something'), validators=[

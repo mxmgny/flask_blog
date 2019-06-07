@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-06-06 18:23+0300\n"
+"POT-Creation-Date: 2019-06-06 19:10+0300\n"
 "PO-Revision-Date: 2019-06-06 17:41+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -43,6 +43,14 @@ msgstr "Повторите пароль"
 msgid "Register"
 msgstr "Зарегистрируйтесь"
 
+#: app/forms.py:23
+msgid "This name is already in use"
+msgstr "Это имя уже занято"
+
+#: app/forms.py:28
+msgid "This email is already in use"
+msgstr "Эта почта уже используется"
+
 #: app/forms.py:33
 msgid "About me"
 msgstr "Обо мне"
@@ -50,6 +58,10 @@ msgstr "Обо мне"
 #: app/forms.py:34 app/forms.py:49
 msgid "Submit"
 msgstr "Подтвердить"
+
+#: app/forms.py:44
+msgid "Please use a different username."
+msgstr "Пожалуйста, используйте другое имя"
 
 #: app/forms.py:47
 msgid "Say something"
@@ -67,43 +79,51 @@ msgstr "Повторите пароль"
 msgid "Request Password reset"
 msgstr "Запросить сброс пароля"
 
-#: app/routes.py:21
+#: app/routes.py:22
 msgid "Your post is not live!"
 msgstr "Ваш пост готов!"
 
-#: app/routes.py:77
+#: app/routes.py:52
+msgid "Invalid username or password"
+msgstr "Направильное имя или пароль"
+
+#: app/routes.py:78
 msgid "Congratulations, you are now registered person!"
 msgstr "Поздравляем, Вы теперь зарегестрированый пользователь!"
 
-#: app/routes.py:102
+#: app/routes.py:103
 msgid "Your changes have been saved"
 msgstr "Ваши изменения были сохранены"
 
-#: app/routes.py:122
+#: app/routes.py:124
 msgid "User %{username} not found"
 msgstr "Пользователь %{username} не найден"
 
-#: app/routes.py:125
+#: app/routes.py:127
 msgid "You cannot follow yourself!"
 msgstr "Вы не можете быть подписаным на самого себя!"
 
-#: app/routes.py:138
+#: app/routes.py:131
+msgid "You are now following %{username}!"
+msgstr "Теперь вы подписаны на %{username}!"
+
+#: app/routes.py:140
 msgid "User %{username} is not found:c "
 msgstr "Пользователь %{username} не найден"
 
-#: app/routes.py:141
+#: app/routes.py:143
 msgid "You cannot unfollow yourself!"
 msgstr "Вы не можете отписаться от самого себя!"
 
-#: app/routes.py:145
+#: app/routes.py:147
 msgid "You stop following %{username}."
 msgstr "Вы прекратили читать %{username}"
 
-#: app/routes.py:157
+#: app/routes.py:159
 msgid "Check your email for the instructions to reset your password"
 msgstr "Проверте свою електронную почту, чтобы сбросить пароль"
 
-#: app/routes.py:172
+#: app/routes.py:174
 msgid "Your password has been changed"
 msgstr "Ваш пароль был изменен"
 
@@ -115,13 +135,18 @@ msgstr "404. файл не найден"
 msgid "Back"
 msgstr "Назад"
 
+#: app/templates/_post.html:11
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr "%(username)s написал(а) %(when)s"
+
 #: app/templates/base.html:16
 msgid "Microblog"
 msgstr "Микроблог"
 
 #: app/templates/base.html:23
 msgid "Home"
-msgstr "Дом"
+msgstr "Главная"
 
 #: app/templates/base.html:27
 msgid "Login"
@@ -129,7 +154,7 @@ msgstr "Логин"
 
 #: app/templates/base.html:31
 msgid "Explore"
-msgstr "Открывать"
+msgstr "Мир"
 
 #: app/templates/base.html:34
 msgid "Profile"
@@ -157,6 +182,26 @@ msgstr "Предыдущая"
 #: app/templates/user.html:51 app/templates/user.html:53
 msgid "Next"
 msgstr "Следующая"
+
+#: app/templates/login.html:3
+msgid "Sign In"
+msgstr "Войти"
+
+#: app/templates/login.html:24
+msgid " Doesn't have account yet?"
+msgstr "Нет аккаунта?"
+
+#: app/templates/login.html:24
+msgid "Click to register!"
+msgstr "Зарегистрируйся!"
+
+#: app/templates/login.html:25
+msgid "Forgot your Password?"
+msgstr "Забыл пароль?"
+
+#: app/templates/login.html:26
+msgid "Click to reset it "
+msgstr "Нажми, чтобы сбросить"
 
 #: app/templates/user.html:17
 msgid "Last seen on"

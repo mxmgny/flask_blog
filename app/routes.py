@@ -8,6 +8,7 @@ from werkzeug.urls import url_parse
 from datetime import datetime
 from app.email import send_password_reset_email
 from flask_babel import _, get_locale
+from guess_language import guess_language
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -16,7 +17,10 @@ from flask_babel import _, get_locale
 def index():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(body=form.post.data, author=current_user)
+        language = guess_language(form.post.data)
+        if language == 'UNKNOWN' or len(language) > 5:
+            language = ''
+        post = Post(body=form.post.data, author=current_user, language=language)
         db.session.add(post)
         db.session.commit()
         flash(_('Your post is not live!'))
@@ -49,7 +53,7 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password')
+            flash(_('Invalid username or password'))
             return redirect(url_for('login'))
         login_user(user)
         next_page = request.args.get('next')
@@ -128,7 +132,7 @@ def follow(username):
         return redirect(url_for('user'), username=username)
     current_user.follow(user)
     db.session.commit()
-    flash('You are now following {}!'.format(username))
+    flash(_('You are now following %{username}!', username=username))
     return redirect(url_for('user', username=username))
 
 
@@ -174,4 +178,3 @@ def reset_password(token):
         flash(_('Your password has been changed'))
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
-
