@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-06-06 19:10+0300\n"
+"POT-Creation-Date: 2019-06-07 19:23+0300\n"
 "PO-Revision-Date: 2019-06-06 17:46+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -79,52 +79,56 @@ msgstr ""
 msgid "Request Password reset"
 msgstr ""
 
-#: app/routes.py:22
+#: app/routes.py:27
 msgid "Your post is not live!"
 msgstr ""
 
-#: app/routes.py:52
+#: app/routes.py:57
 msgid "Invalid username or password"
 msgstr ""
 
-#: app/routes.py:78
+#: app/routes.py:83
 msgid "Congratulations, you are now registered person!"
 msgstr ""
 
-#: app/routes.py:103
+#: app/routes.py:108
 msgid "Your changes have been saved"
 msgstr ""
 
-#: app/routes.py:124
+#: app/routes.py:129
 msgid "User %{username} not found"
 msgstr ""
 
-#: app/routes.py:127
+#: app/routes.py:132
 msgid "You cannot follow yourself!"
 msgstr ""
 
-#: app/routes.py:131
+#: app/routes.py:136
 msgid "You are now following %{username}!"
 msgstr ""
 
-#: app/routes.py:140
+#: app/routes.py:145
 msgid "User %{username} is not found:c "
 msgstr ""
 
-#: app/routes.py:143
+#: app/routes.py:148
 msgid "You cannot unfollow yourself!"
 msgstr ""
 
-#: app/routes.py:147
+#: app/routes.py:152
 msgid "You stop following %{username}."
 msgstr ""
 
-#: app/routes.py:159
+#: app/routes.py:165
 msgid "Check your email for the instructions to reset your password"
 msgstr ""
 
-#: app/routes.py:174
+#: app/routes.py:181
 msgid "Your password has been changed"
+msgstr ""
+
+#: app/translate.py:9
+msgid "Error: the translation service is not configured."
 msgstr ""
 
 #: app/templates/404.html:5
@@ -138,6 +142,10 @@ msgstr ""
 #: app/templates/_post.html:11
 #, python-format
 msgid "%(username)s said %(when)s"
+msgstr ""
+
+#: app/templates/_post.html:24
+msgid "Translate"
 msgstr ""
 
 #: app/templates/base.html:16
@@ -162,6 +170,10 @@ msgstr ""
 
 #: app/templates/base.html:37
 msgid "Logout"
+msgstr ""
+
+#: app/templates/base.html:78
+msgid "Error: Could not contact server."
 msgstr ""
 
 #: app/templates/edit_profile.html:3

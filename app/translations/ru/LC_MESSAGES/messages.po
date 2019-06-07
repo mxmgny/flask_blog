@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-06-06 19:10+0300\n"
+"POT-Creation-Date: 2019-06-07 19:23+0300\n"
 "PO-Revision-Date: 2019-06-06 17:41+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -79,53 +79,57 @@ msgstr "Повторите пароль"
 msgid "Request Password reset"
 msgstr "Запросить сброс пароля"
 
-#: app/routes.py:22
+#: app/routes.py:27
 msgid "Your post is not live!"
 msgstr "Ваш пост готов!"
 
-#: app/routes.py:52
+#: app/routes.py:57
 msgid "Invalid username or password"
 msgstr "Направильное имя или пароль"
 
-#: app/routes.py:78
+#: app/routes.py:83
 msgid "Congratulations, you are now registered person!"
 msgstr "Поздравляем, Вы теперь зарегестрированый пользователь!"
 
-#: app/routes.py:103
+#: app/routes.py:108
 msgid "Your changes have been saved"
 msgstr "Ваши изменения были сохранены"
 
-#: app/routes.py:124
+#: app/routes.py:129
 msgid "User %{username} not found"
 msgstr "Пользователь %{username} не найден"
 
-#: app/routes.py:127
+#: app/routes.py:132
 msgid "You cannot follow yourself!"
 msgstr "Вы не можете быть подписаным на самого себя!"
 
-#: app/routes.py:131
+#: app/routes.py:136
 msgid "You are now following %{username}!"
 msgstr "Теперь вы подписаны на %{username}!"
 
-#: app/routes.py:140
+#: app/routes.py:145
 msgid "User %{username} is not found:c "
 msgstr "Пользователь %{username} не найден"
 
-#: app/routes.py:143
+#: app/routes.py:148
 msgid "You cannot unfollow yourself!"
 msgstr "Вы не можете отписаться от самого себя!"
 
-#: app/routes.py:147
+#: app/routes.py:152
 msgid "You stop following %{username}."
 msgstr "Вы прекратили читать %{username}"
 
-#: app/routes.py:159
+#: app/routes.py:165
 msgid "Check your email for the instructions to reset your password"
 msgstr "Проверте свою електронную почту, чтобы сбросить пароль"
 
-#: app/routes.py:174
+#: app/routes.py:181
 msgid "Your password has been changed"
 msgstr "Ваш пароль был изменен"
+
+#: app/translate.py:9
+msgid "Error: the translation service is not configured."
+msgstr Ошибка: сервис перевода не настроен.""
 
 #: app/templates/404.html:5
 msgid "404.File Not Found"
@@ -139,6 +143,10 @@ msgstr "Назад"
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s написал(а) %(when)s"
+
+#: app/templates/_post.html:24
+msgid "Translate"
+msgstr "Перевести"
 
 #: app/templates/base.html:16
 msgid "Microblog"
@@ -163,6 +171,10 @@ msgstr "Профиль"
 #: app/templates/base.html:37
 msgid "Logout"
 msgstr "Выйти"
+
+#: app/templates/base.html:78
+msgid "Error: Could not contact server."
+msgstr "Ошбика: Невозможно связаться с сервером"
 
 #: app/templates/edit_profile.html:3
 msgid "Edit Profile"
