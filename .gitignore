@@ -76,6 +76,7 @@ target/
 
 # idea
 .idea
+.idea/workspace.xml
 
 # Jupyter Notebook
 .ipynb_checkpoints
