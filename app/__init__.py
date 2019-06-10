@@ -9,6 +9,7 @@ from flask_moment import Moment
 from flask_babel import Babel
 from flask_babel import lazy_gettext as _l
 from config import Config
+from elasticsearch import Elasticsearch
 
 
 db = SQLAlchemy()
@@ -41,6 +42,9 @@ def create_app(config_class=Config):
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
 
+    app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) \
+        if app.config['ELASTICSEARCH_URL'] else None
+
     if not app.debug and not app.testing:
         if app.config['MAIL_SERVER']:
             auth = None
@@ -69,6 +73,8 @@ def create_app(config_class=Config):
         app.logger.info('Microblog startup')
 
     return app
+
+
 
 
 @babel.localeselector
